@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .conn {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 20px;
+            justify-content: space-between; /* Even space between items */
+            margin-left: 300px;
+        }
+
+        .con-1 {
+            background: linear-gradient(45deg, #ff6f61, #dce35b);
+            color: #fff;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .con-1:hover {
+            transform: scale(1.1);
+        }
+
+        .search {
+            border-radius: 20px;
+            background-color: #f0f8ff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
+            padding: 10px;
+        }
+
+        .search input {
+            border: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+            flex: 1;
+            font-size: 16px;
+        }
+
+        .search svg {
+            margin-left: 10px;
+            color: #007bff;
+        }
+
+        .input-group select {
+            border-radius: 25px;
+            border: 2px solid #ddd;
+            padding: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: border-color 0.3s, box-shadow 0.3s;
+            width: 200px; /* Adjusted width for dropdown */
+            margin-left: 10px; /* Space between input and dropdown */
+        }
+
+        .input-group input:focus, .input-group select:focus {
+            border-color: #ff6f61;
+            box-shadow: 0 4px 8px rgba(255, 111, 97, 0.5);
+            outline: none;
+        }
+
+        .bg {
+            background-image: url("https://static.vecteezy.com/system/resources/previews/023/639/130/non_2x/molecular-structure-with-hospital-cross-for-medical-chemistry-and-science-concept-background-illustration-vector.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bg-2 {
+            background-color: #fff;
+            border-radius: 15px;
+            height: auto;
+            width: 700px;
+            text-align: center;
+            margin: 20px;
+            overflow-y: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border: 2px solid #333;
+            position: relative;
+            animation: slideIn 1s ease-out;
+            padding: 20px;
+        }
+
+        .se {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .btn {
+            height: 50px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 25px;
+            padding: 0 20px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .h3 {
+            height: 50px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+            width: 300px;
+            border-radius: 10px;
+            text-align: center;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            color: #333;
+            padding: 10px;
+            transition: background 0.3s;
+            display: flex;
+            margin-left: 30px;
+        }
+
+        .h3:hover {
+            background: linear-gradient(135deg, #ff6f61, #dce35b);
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .bg-2 {
+                width: 90%;
+                height: auto;
+            }
+
+            .se {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .conn {
+                flex-direction: column; /* Stack vertically on small screens */
+                align-items: center;
+            }
+
+            .search {
+                flex-direction: column;
+                max-width: 100%;
+                margin-top: 20px;
+            }
+        }
+        .h{
+            margin-left:100px ;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id="SectionHome">
+    <div class="m-3">
+        <div class="conn">
+            <div class="lss d-flex flex-row ">
+                <h1 class="na p-3 con-1 mb-4">IMG</h1>
+                <div class="input-group mb-3">
+                    <input type="text" class="h3 ml-5" placeholder="Doctor's Name">
+                </div>
+                <div class="input-group">
+                    <input type="text" class="h3 ml-5" placeholder="Doctor's ID">
+                </div>
+                </div>
+               
+                  
+                    </div>
+        </div>
+    </div>
+        <div class="bg m-3">
+            <div class="bg-2">
+                <div class="lss d-flex flex-row justify-content center ">
+                    
+                   <a href="C:\Users\student\Desktop\sih\test.html"> <input type="text" class="h3 h ml-5" placeholder="Attend Patients"></a>
+                </div>
+                <div class="se">
+                    <!-- Content for search results goes here -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

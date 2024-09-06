@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Registration Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f0f2f5;
+            font-family: 'Arial', sans-serif;
+            padding: 20px;
+        }
+
+        .registration-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .registration-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-control {
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: scale(1.02);
+        }
+
+        .form-group label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            // Validate Contact Number length
+            var phone = document.getElementById('phone').value;
+            if (phone.length !== 10) {
+                alert('Contact number must be exactly 10 digits.');
+                return false; // Prevent form submission
+            }
+
+            // Validate Password Match
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirm-password').value;
+            if (password !== confirmPassword) {
+                alert('Passwords do not match. Please enter the same password.');
+                return false; // Prevent form submission
+            }
+
+            // Validate file upload
+            var fileInput = document.getElementById('certificate');
+            if (fileInput.files.length === 0) {
+                alert('Please upload your certificate.');
+                return false; // Prevent form submission
+            }
+
+            return true; // Proceed with form submission
+        }
+    </script>
+</head>
+
+<body>
+    <div class="registration-container">
+        <h2>Doctor Registration Form</h2>
+        <form onsubmit="return validateForm()" enctype="multipart/form-data"> <!-- Add enctype for file uploads -->
+
+            <!-- Doctor Name -->
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter full name" required>
+            </div>
+
+            <!-- Specialization -->
+            <div class="form-group">
+                <label for="specialization">Specialization</label>
+                <input type="text" class="form-control" id="specialization" placeholder="Enter specialization" required>
+            </div>
+
+            <!-- Date of Birth -->
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" class="form-control" id="dob" required>
+            </div>
+
+            <!-- Gender -->
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select class="form-control" id="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="form-group">
+                <label for="phone">Contact Number</label>
+                <input type="tel" class="form-control" id="phone" placeholder="Enter contact number" pattern="\d{10}" title="Please enter a 10-digit contact number" required>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email address" required>
+            </div>
+
+            <!-- Medical License Number -->
+            <div class="form-group">
+                <label for="license">Medical License Number</label>
+                <input type="text" class="form-control" id="license" placeholder="Enter medical license number" required>
+            </div>
+
+            <!-- Clinic Address -->
+            <div class="form-group">
+                <label for="clinic-address">Clinic Address</label>
+                <textarea class="form-control" id="clinic-address" rows="3                " placeholder="Enter clinic address" required></textarea>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Password" required>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" class="form-control" id="confirm-password" placeholder="Confirm Password" required>
+            </div>
+
+            <!-- Certificate Upload -->
+            <div class="form-group">
+                <label for="certificate">Doctor Certificate</label>
+                <input type="file" class="form-control" id="certificate" accept=".pdf, .jpg, .jpeg, .png" required>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary"><a href="C:\Users\student\Desktop\sih\docreg.html" style="color:white;">Register</a></button>
+        </form>
+    </div>
+</body>
+
+</html>
+

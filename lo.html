@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f0f2f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-container h2 {
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-control {
+            border-radius: 25px;
+            padding: 10px 15px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+        }
+
+        .btn-primary {
+            border-radius: 25px;
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+            background-color: #007bff;
+            border: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: scale(1.02);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .forgot-password {
+            text-align: center;
+            display: block;
+            margin-top: 15px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #aaa;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        .form-control:focus {
+            box-shadow: none;
+            border-color: #007bff;
+        }
+        .pp{
+           
+            color:black;
+        }
+        .lo{
+            color: white;
+        }
+        .tot{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form>
+            <div class="form-group">
+                <span class="input-icon"><i class="fas fa-user"></i></span>
+                <input type="text" class="form-control" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <span class="input-icon"><i class="fas fa-lock"></i></span>
+                <input type="password" class="form-control" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn btn-primary"><a href="C:\Users\student\Desktop\sih\fronto.html" class="lo">Login</button>
+            <div class="tot">
+            <p class="pp">Not a User?</p>
+            <a href="C:\Users\student\Desktop\sih\page.html">Sign Up></a>
+        </div>
+        </form>
+    </div>
+
+    <!-- FontAwesome Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

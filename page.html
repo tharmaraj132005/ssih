@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Registration Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f0f2f5;
+            font-family: 'Arial', sans-serif;
+            padding: 20px;
+        }
+
+        .registration-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .registration-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-control {
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: scale(1.02);
+        }
+
+        .form-group label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            // Validate Contact Number length
+            var phone = document.getElementById('phone').value;
+            if (phone.length !== 10) {
+                alert('Contact number must be exactly 10 digits.');
+                return false; // Prevent form submission
+            }
+
+            // Validate Password Match
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirm-password').value;
+            if (password !== confirmPassword) {
+                alert('Passwords do not match. Please enter the same password.');
+                return false; // Prevent form submission
+            }
+
+            return true; // Proceed with form submission
+        }
+    </script>
+</head>
+
+<body>
+    <div class="registration-container">
+        <h2>Patient Registration Form</h2>
+        <form onsubmit="return validateForm()"> <!-- Form Validation Function -->
+
+            <!-- Patient Name -->
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter full name" required>
+            </div>
+
+            <!-- Date of Birth -->
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" class="form-control" id="dob" required>
+            </div>
+
+            <!-- Gender -->
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select class="form-control" id="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="form-group">
+                <label for="phone">Contact Number</label>
+                <input type="tel" class="form-control" id="phone" placeholder="Enter contact number" pattern="\d{10}" title="Please enter a 10-digit contact number" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Emergency Number</label>
+                <input type="tel" class="form-control" id="emg" placeholder="Enter Emergency number" pattern="\d{10}" title="Please enter a 10-digit contact number" required>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email address" required>
+            </div>
+
+            <!-- Address -->
+            <div class="form-group">
+                <label for="address">Address</label>
+                <textarea class="form-control" id="address" rows="3" placeholder="Enter address" required></textarea>
+            </div>
+
+            <!-- City -->
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" class="form-control" id="city" placeholder="Enter city" required>
+            </div>
+
+            <!-- State -->
+            <div class="form-group">
+                <label for="state">State</label>
+                <input type="text" class="form-control" id="state" placeholder="Enter state" required>
+            </div>
+
+            <!-- Aadhar Number -->
+            <div class="form-group">
+                <label for="zip">Aadhar No</label>
+                <input type="text" class="form-control" id="zip" placeholder="Enter Aadhar No" required>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Password" required>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" class="form-control" id="confirm-password" placeholder="Confirm Password" required>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary"><a  href="C:\Users\student\Desktop\sih\finger.html" style="color:white;">Register</a></button>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <link src="C:\Users\student\Desktop\sih\page.js"/>
+</body>
+
+</html>

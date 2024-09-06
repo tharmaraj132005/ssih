@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .search-container {
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search {
+            border-radius: 20px;
+            background-color: #f0f8ff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            width: 80%;
+            max-width: 600px;
+            padding: 10px;
+        }
+
+        .search input {
+            border: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+            flex: 1;
+            font-size: 16px;
+        }
+
+        .search svg {
+            margin-left: 10px;
+            color: #007bff;
+        }
+
+        .bg {
+            background-image: url("https://static.vecteezy.com/system/resources/previews/023/639/130/non_2x/molecular-structure-with-hospital-cross-for-medical-chemistry-and-science-concept-background-illustration-vector.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            opacity: 0.9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .content {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 1000px;
+            padding: 20px;
+            overflow-y: auto;
+            height: 80vh;
+            margin: 0 auto;
+        }
+
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .item h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .item input {
+            border: 1px solid #007bff;
+            padding: 10px;
+            border-radius: 10px;
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        .btn {
+            margin-top: 10px;
+        }
+
+        .back-button {
+            margin-top: 20px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            border-radius: 20px;
+            padding: 10px 20px;
+        }
+
+        .btn-primary a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+
+        @media (max-width: 768px) {
+            .search {
+                width: 95%;
+            }
+
+            .content {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="search-container">
+        <div class="search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+            </svg>
+            <input type="text" placeholder="Search">
+        </div>
+    </div>
+
+    <div class="bg">
+        <div class="content">
+            <div class="item">
+                <input type="text" placeholder="Date">
+                <input type="text" placeholder="Hospital's Name">
+                <button class="btn btn-primary">View</button>
+            </div>
+            <div class="item">
+                <input type="text" placeholder="Date">
+                <input type="text" placeholder="Hospital's Name">
+                <button class="btn btn-primary">View</button>
+            </div>
+            <div class="item">
+                <input type="text" placeholder="Date">
+                <input type="text" placeholder="Hospital's Name">
+                <button class="btn btn-primary">View</button>
+            </div>
+            <div class="item">
+                <input type="text" placeholder="Date">
+                <input type="text" placeholder="Hospital's Name">
+                <button class="btn btn-primary">View</button>
+            </div>
+            <div class="item">
+                <input type="text" placeholder="Date">
+                <input type="text" placeholder="Hospital's Name">
+                <button class="btn btn-primary">View</button>
+            </div>
+           
+        </div>
+        <div class="back-button">
+            <a href="C:\Users\student\Desktop\sih\fronto.html" class="btn btn-primary">Back</a>
+        </div>
+    </div>
+</body>
+
+</html>
